@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ремонт телефонов</title>
+</head>
+<body>
+	{% load menu_tags %}
+	<a href="{{ menu.url }}">{{ menu.name }}</a>
+	{% if menu.children %}
+	<details {% if menu.id in unwrapped_menu_item_ids %} open {% endif %}>
+		<summary>
+
+    	</summary>
+		{% for child in menu.children %}
+		<div class="menu">
+        	{% draw_menu_item_children child.id %}
+    	</div>
+    	{% endfor %}
+	</details>
+	{% endif %}
+
+	<h1>Ремонт телефонов</h1>
+	<p>Мы предлагаем быстрый и качественный ремонт мобильных устройств. В нашем сервисном центре вы можете починить экран, заменить аккумулятор или отремонтировать другую поломку. </p>
+	<h2>Наши услуги</h2>
+	<ul>
+		<li>Замена экрана</li>
+		<li>Замена аккумулятора</li>
+		<li>Ремонт разъемов и кнопок</li>
+		<li>Диагностика и ремонт после попадания воды</li>
+	</ul>
+	<h2>Контакты</h2>
+	<p>Адрес: ул. Пушкина, 10</p>
+	<p>Телефон: 8-800-123-45-67</p>
+</body>
+</html>
+
+
+
+
+<!--  {% if products %}-->
+<!--    <ul>-->
+<!--      {% for product in products %}-->
+<!--        <li>{{ product.name }}</li>-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+<!--  {% endif %}-->
+
+
+
+<!--{% if sub_categories %}-->
+<!--    <ul>-->
+<!--      {% for sub_category in sub_categories %}-->
+<!--        <li><a href="{{ sub_category.get_absolute_url }}">{{ sub_category.name }}</a></li>-->
+<!--      {% endfor %}-->
+<!--    </ul>-->
+<!--  {% endif %}-->
